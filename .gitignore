@@ -21,3 +21,20 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+.DS_Store
+.vscode
+.settings
+.project
+.classpath
+*.class
+*.log
+*.out
+*.dSYM
+node_modules
+*.o
+*.bgv
+node_modules
+
+chapter9/wasm/emsdk
+chapter9/wasm/emsdk
