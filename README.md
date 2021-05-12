@@ -1,7 +1,6 @@
 # Reference Implementation for "Supercharge your Applications with GraalVM" Book
 This is a reference implementation to demostrate GraalVM based Microservices architecture. Its a very simple Book catalogue, powered by Google Books API. The following the application architecture
 
-# Architecture Overview
 
 ![alt](./images/architecture.png)
 
