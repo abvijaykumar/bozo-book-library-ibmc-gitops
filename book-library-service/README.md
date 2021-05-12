@@ -1,4 +1,4 @@
-# book-library-service project
+# Book Library Service
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
