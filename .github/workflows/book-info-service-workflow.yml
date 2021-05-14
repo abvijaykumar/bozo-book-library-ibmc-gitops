@@ -8,9 +8,9 @@
 
 name: Build and Deploy to IKS
 
-on:
-  release:
-    types: [created]
+on: 
+  push:
+    branches: main/bozo-book-library/bozo-book-info-service
 
 # Environment variables available to all jobs and steps in this workflow
 env:
@@ -19,7 +19,8 @@ env:
   IBM_CLOUD_REGION: jp-tok
   ICR_NAMESPACE: ${{ secrets.ICR_NAMESPACE }}
   REGISTRY_HOSTNAME: docker.io
-  IMAGE_NAME: iks-test
+  DOCKER_USERNAME: abvijaykumar
+  IMAGE_NAME: bozo-book-info-service
   IKS_CLUSTER: kvijay-kube-new-cluster
   DEPLOYMENT_NAME: iks-test
   PORT: 5001
@@ -53,14 +54,12 @@ jobs:
     # Build the Docker image
     - name: Build with Docker
       run: |
-        docker build -t "$REGISTRY_HOSTNAME"/"$ICR_NAMESPACE"/"$IMAGE_NAME":"$GITHUB_SHA" \
-          --build-arg GITHUB_SHA="$GITHUB_SHA" \
-          --build-arg GITHUB_REF="$GITHUB_REF" .
+        ./mvnw package -Pnative -Dquarkus.native.container-build=true -Dquarkus.container-image.build=true -Dquarkus.container-image.username=$DOCKER_USERNAME -Dquarkus.container-image.name=@IMAGE_NAME -Dquarkus.container-image.group=$DOCKER_USERNAME
 
     # Push the image to IBM Container Registry
     - name: Push the image to ICR
       run: |
-        docker push $REGISTRY_HOSTNAME/$ICR_NAMESPACE/$IMAGE_NAME:$GITHUB_SHA
+        docker push $REGISTRY_HOSTNAME/$ICR_NAMESPACE/$DOCKER_USERNAME/$IMAGE_NAME:$GITHUB_SHA
 
     # Deploy the Docker image to the IKS cluster
     - name: Deploy to IKS
