@@ -16,11 +16,11 @@ on:
 env:
   GITHUB_SHA: ${{ github.sha }}
   IBM_CLOUD_API_KEY: ${{ secrets.IBM_CLOUD_API_KEY }}
-  IBM_CLOUD_REGION: us-south
+  IBM_CLOUD_REGION: jp-tok
   ICR_NAMESPACE: ${{ secrets.ICR_NAMESPACE }}
-  REGISTRY_HOSTNAME: us.icr.io
+  REGISTRY_HOSTNAME: docker.io
   IMAGE_NAME: iks-test
-  IKS_CLUSTER: example-iks-cluster-name-or-id
+  IKS_CLUSTER: kvijay-kube-new-cluster
   DEPLOYMENT_NAME: iks-test
   PORT: 5001
 
