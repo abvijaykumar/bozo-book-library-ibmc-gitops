@@ -10,8 +10,13 @@ name: Build and Deploy to Book Info Service
 
 on: 
   workflow_dispatch:
-  push:
-    branches: main/bozo-book-library/bozo-book-info-service
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
 
 # Environment variables available to all jobs and steps in this workflow
 env:
