@@ -26,8 +26,6 @@ import org.abvijay.bozobooklibrary.bookinfoservice.objects.BookInfoSearchRespons
 import org.abvijay.bozobooklibrary.bookinfoservice.objects.BookItem;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
-import org.jboss.resteasy.annotations.jaxrs.PathParam;
-
 @Path("/bookinfo")
 public class BookInfoService {
 	@Inject
