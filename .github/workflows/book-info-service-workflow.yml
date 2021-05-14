@@ -78,9 +78,6 @@ jobs:
       run: |
         ibmcloud ks cluster config --cluster $IKS_CLUSTER
         kubectl config set-context --current --namespace=bozo-book-library-dev
-        kubectl create deployment $DEPLOYMENT_NAME --image=$REGISTRY_HOSTNAME/$ICR_NAMESPACE/$IMAGE_NAME:latest --dry-run -o yaml > deployment.yaml
-        kubectl apply -f deployment.yaml
-        kubectl rollout status deployment/$DEPLOYMENT_NAME
-        kubectl create service clusterIP $DEPLOYMENT_NAME --tcp=8080:8080 --dry-run=client -o yaml > service.yaml
-        kubectl apply -f service.yaml
-        kubectl get services -o wide
+
+        kubectl apply -f ./k8s/ibmc/book-info-service-config-map.yaml
+        kubectl apply -f ./k8s/ibmc/book-info-service-deployment.yaml
