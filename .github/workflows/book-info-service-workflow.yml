@@ -10,8 +10,6 @@ name: Build and Deploy to Book Info Service
 
 on: 
   workflow_dispatch:
-    tags:
-      description: 'Manual Run' 
   push:
     branches: main/bozo-book-library/bozo-book-info-service
 
