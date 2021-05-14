@@ -28,7 +28,7 @@ env:
   DOCKER_USERNAME: abvijaykumar
   IMAGE_NAME: bozo-book-info-service
   IKS_CLUSTER: kvijay-kube-new-cluster
-  DEPLOYMENT_NAME: iks-test
+  DEPLOYMENT_NAME: book-info-service-deployments
   PORT: 5001
 
 jobs:
