@@ -60,6 +60,7 @@ jobs:
     # Build the Docker image
     - name: Build with Docker
       run: |
+        cd bozo-book-info-service
         ./mvnw package -Pnative -Dquarkus.native.container-build=true -Dquarkus.container-image.build=true -Dquarkus.container-image.username=$DOCKER_USERNAME -Dquarkus.container-image.name=@IMAGE_NAME -Dquarkus.container-image.group=$DOCKER_USERNAME
 
     # Push the image to IBM Container Registry
