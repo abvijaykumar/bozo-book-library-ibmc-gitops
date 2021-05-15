@@ -18,7 +18,6 @@ const Home = () => {
         <div className="App">
         {user ? (
           <div>
-            <h3>With Git Workflow</h3>
             <HashRouter>
               <ul className="header">
                 <li><NavLink to="/">Browse</NavLink></li>
