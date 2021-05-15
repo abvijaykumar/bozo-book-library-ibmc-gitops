@@ -13,9 +13,8 @@ on:
     branches:
       - main
   workflow_dispatch:
-    inputs:
-      name:
-        description: 'Test scenario tags'  
+    name:
+      description: 'Test scenario tags'  
 
 # Environment variables available to all jobs and steps in this workflow
 env:
