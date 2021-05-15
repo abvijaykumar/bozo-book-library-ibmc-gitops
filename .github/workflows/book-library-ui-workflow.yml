@@ -9,13 +9,12 @@
 name: UI Book Library Service
 
 on: 
+  push:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'     
-        required: true
-        default: 'warning'
-      tags:
+      name:
         description: 'Test scenario tags'  
 
 # Environment variables available to all jobs and steps in this workflow
