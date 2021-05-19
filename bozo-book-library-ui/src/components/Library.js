@@ -54,6 +54,8 @@ const Library = (props) => {
                 console.log("Received the response... " + res);
                 setSearchResponse("received ");
                 setSearchResulTotalCount(resultObject.getBooks.totalItems);
+
+                console.log("resultObject.getBooks.items "+ resultObject.getBooks.items);
             });
     }
 
@@ -93,8 +95,10 @@ const Library = (props) => {
     return (
         <div className="BookList">
             <h2>{user}</h2>
+            
             {resultObject &&
                 <div>
+                    <h3>{resultObject.getBooks.totalItems}</h3>
                     <section class="u-align-center u-clearfix u-grey-5 u-section-1" id="carousel_ed60">
                         <div class="u-clearfix u-sheet u-sheet-1">
                             {resultObject.getBooks.items &&
@@ -110,8 +114,6 @@ const Library = (props) => {
                                             </td>
                                         </tr>
                                     </table>
-
-
 
                                     <div class="u-list u-repeater u-list-1">
                                         {resultObject.getBooks.items.map(function (volume) {
