@@ -51,11 +51,11 @@ const Library = (props) => {
             .then(res => res.json())
             .then(res => {
                 resultObject = res.data
-                console.log("Received the response... " + res);
+                console.log("result Object "+ resultObject);
+                console.log("result Object getBooks "+ resultObject.getBooks);
+                console.log("result Object getBooks totalItems "+ resultObject.getBooks.totalItems);
                 setSearchResponse("received ");
                 setSearchResulTotalCount(resultObject.getBooks.totalItems);
-
-                console.log("resultObject.getBooks.items "+ resultObject.getBooks.items);
             });
     }
 
@@ -95,11 +95,8 @@ const Library = (props) => {
     return (
         <div className="BookList">
             <h2>{user}</h2>
-            <h3>{resultObject}</h3>
-            
             {resultObject &&
                 <div>
-                    <h3>{resultObject.getBooks.totalItems}</h3>
                     <section class="u-align-center u-clearfix u-grey-5 u-section-1" id="carousel_ed60">
                         <div class="u-clearfix u-sheet u-sheet-1">
                             {resultObject.getBooks.items &&

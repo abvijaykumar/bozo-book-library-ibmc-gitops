@@ -81,7 +81,6 @@ const BookList = () => {
 
     return (
         <div className="BookList">
-            <h2>GIT workflow version</h2>
             <h2>Browse {user}</h2>
             <SearchField
                 placeholder="Search..."
