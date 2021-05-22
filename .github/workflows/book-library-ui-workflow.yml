@@ -87,7 +87,4 @@ jobs:
       run: |
         ibmcloud ks cluster config --cluster $IKS_CLUSTER
         kubectl config current-context
-        ls -la
-        cd bozo-book-library-ui
-        export $BUILD_NUMBER
-        kubectl replace -f ./k8s/ibmc/book-library-ui-deployment.yaml
+        kubectl set image deployment book-library-ui-deployments book-library-ui-service=$DOCKER_USERNAME/$IMAGE_NAME:$BUILD_NUMBER
