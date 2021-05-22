@@ -95,6 +95,7 @@ const Library = (props) => {
     return (
         <div className="BookList">
             <h2>{user}</h2>
+            <h3>{resultObject}</h3>
             
             {resultObject &&
                 <div>
