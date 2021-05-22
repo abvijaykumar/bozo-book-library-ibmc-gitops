@@ -79,4 +79,4 @@ jobs:
         kubectl config current-context
         ls -la
         cd bozo-book-library-ui
-        kubectl apply -f ./k8s/ibmc/book-library-ui-deployment.yaml
+        kubectl replace -f ./k8s/ibmc/book-library-ui-deployment.yaml
