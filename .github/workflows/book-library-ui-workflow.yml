@@ -59,7 +59,7 @@ jobs:
       uses: einaregilsson/build-number@v3
       with:
         token: ${{secrets.github_token}}        
-        
+
     - name: Print new build number
       run: echo "Build number is $BUILD_NUMBER"
 
@@ -85,4 +85,5 @@ jobs:
       run: |
         ibmcloud ks cluster config --cluster $IKS_CLUSTER
         kubectl config current-context
-        kubectl set image deployment book-library-ui-deployments book-library-ui-service=$DOCKER_USERNAME/$IMAGE_NAME:$BUILD_NUMBER
+        kubectl config set-context --current --namespace=bozo-book-library-dev
+        kubectl set image deployment book-library-ui-deployments book-library-ui-service=$DOCKER_USERNAME/$IMAGE_NAME:$BUILD_NUMBER 
