@@ -25,6 +25,7 @@ const Library = (props) => {
 
     const getBooks = (bookids) => {
         var bookidsJson = JSON.stringify(bookids);
+        console.log("bookidsJson "+ bookidsJson);
         fetch(BOOK_INFO_SERVICE_URL+'/bookinfo/graphql', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -48,7 +49,11 @@ const Library = (props) => {
               }`
             })
         })
-            .then(res => res.json())
+            .then(res => {
+                var resjson = res.json();
+                console.log("resjson :"+ resjson)
+
+            })
             .then(res => {
                 resultObject = res.data
                 console.log("result Object "+ resultObject);
