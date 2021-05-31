@@ -12,6 +12,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'bozo-book-library-ui/**'
   workflow_dispatch:
     name:
       description: 'Test scenario tags'  
