@@ -115,7 +115,7 @@ public class BookInfoService {
 					response = client.send(request, BodyHandlers.ofString());
 					responseJson = response.body();
 
-					System.out.println("URL: "+ url)
+					System.out.println("URL: "+ url);
 					System.out.println("Resoinse JSON :" + responseJson);
 					
 					BookItem item = objMapper.readValue(responseJson, BookItem.class);
