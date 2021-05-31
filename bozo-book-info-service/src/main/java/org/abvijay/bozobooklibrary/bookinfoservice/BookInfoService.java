@@ -98,12 +98,12 @@ public class BookInfoService {
 			ObjectMapper objMapper = new ObjectMapper();
 			for (int i=0; i<bookids.size(); i++) {
 
-				Response cachedItem  = redisClient.get(bookids.get(i));
+				/*Response cachedItem  = redisClient.get(bookids.get(i));
 				if(cachedItem != null ) {
 					System.out.println("Found " + cachedItem.toString());
 					BookItem item = objMapper.readValue(cachedItem.toString(), BookItem.class);
 					items.add(item);
-				} else {
+				} else {*/
 					System.out.println("Not found");
 					String url = GOOGLE_API_URL + bookids.get(i)
 					+ "?key="+GOOGLE_API_KEY;
@@ -119,8 +119,8 @@ public class BookInfoService {
 					items.add(item);
 
 					String itemJson = objMapper.writeValueAsString(item);
-					redisClient.set(Arrays.asList(item.getId(), itemJson));
-				}
+				//	redisClient.set(Arrays.asList(item.getId(), itemJson));
+				//}
 
 			}
 
