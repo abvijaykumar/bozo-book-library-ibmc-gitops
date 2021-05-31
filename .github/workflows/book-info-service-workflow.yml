@@ -12,6 +12,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'bozo-book-info-service/**'
+
   workflow_dispatch:
     name:
       description: 'Test scenario tags'  
