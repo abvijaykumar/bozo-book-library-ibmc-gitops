@@ -46,14 +46,15 @@ const BookList = () => {
                     }
                   }`
             })
-        })
-            .then(res => res.json())
-            .then(res => {
+        }).then(res => res.json())
+          .then(res => {
                 resultObject = res.data
                 console.log("Received the response...");
                 setSearchResponse("received");
                 setSearchResulTotalCount(resultObject.search.totalItems);
-            });
+          }).catch((error) => {
+            console.error('Error:', error);
+        });
     }
 
     const onSearch = (value, event) => {

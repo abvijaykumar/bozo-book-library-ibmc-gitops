@@ -49,13 +49,15 @@ const Library = (props) => {
               }`
             })
         }).then(res => res.json())
-          .then(data => {
-                resultObject = data
+          .then(res => {
+                resultObject = res.data
                 console.log("result Object "+ resultObject);
                 console.log("result Object getBooks "+ resultObject.getBooks);
                 console.log("result Object getBooks totalItems "+ resultObject.getBooks.totalItems);
                 setSearchResponse("received ");
                 setSearchResulTotalCount(resultObject.getBooks.totalItems);
+            }).catch((error) => {
+                console.error('Error:', error);
             });
     }
 
