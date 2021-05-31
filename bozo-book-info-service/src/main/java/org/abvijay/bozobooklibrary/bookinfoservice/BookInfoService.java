@@ -105,7 +105,7 @@ public class BookInfoService {
 					items.add(item);
 				} else {*/
 					System.out.println("Not found");
-					String url = GOOGLE_API_URL + bookids.get(i)
+					String url = GOOGLE_API_URL + "/"+ bookids.get(i)
 					+ "?key="+GOOGLE_API_KEY;
 	
 					HttpClient client = HttpClient.newHttpClient();
@@ -115,7 +115,7 @@ public class BookInfoService {
 					response = client.send(request, BodyHandlers.ofString());
 					responseJson = response.body();
 
-					System.out.println("URL: "+ url);
+					System.out.println("URL: "+ url)
 					System.out.println("Resoinse JSON :" + responseJson);
 					
 					BookItem item = objMapper.readValue(responseJson, BookItem.class);
