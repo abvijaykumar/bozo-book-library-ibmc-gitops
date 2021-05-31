@@ -49,11 +49,7 @@ const Library = (props) => {
               }`
             })
         })
-            .then(res => {
-                var resjson = res.json();
-                console.log("resjson :"+ resjson)
-
-            })
+            .then(res => res.json())
             .then(res => {
                 resultObject = res.data
                 console.log("result Object "+ resultObject);

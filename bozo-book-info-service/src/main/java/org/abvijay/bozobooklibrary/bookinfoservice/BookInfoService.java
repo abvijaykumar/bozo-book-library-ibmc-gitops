@@ -92,6 +92,7 @@ public class BookInfoService {
 		BookInfoSearchResponse resp = new BookInfoSearchResponse();
 
 		List<BookItem> items = new ArrayList<BookItem>();
+		System.out.println("BookIds: "+ bookids);
 		String responseJson = "";
 		try {
 			ObjectMapper objMapper = new ObjectMapper();
