@@ -48,9 +48,9 @@ const Library = (props) => {
                 }
               }`
             })
-        })
-            .then(res => res.json())
-            .then(res => {
+        }).then(res => {
+                console.log(res.json())
+            }).then(res => {
                 resultObject = res.data
                 console.log("result Object "+ resultObject);
                 console.log("result Object getBooks "+ resultObject.getBooks);
