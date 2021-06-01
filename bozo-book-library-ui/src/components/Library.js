@@ -14,7 +14,6 @@ const Library = (props) => {
     const { user } = useContext(CurrentUserContext);
 
     console.log('User '+ user);
-    
 
     useEffect(() => {
         getLibraryBooks();
@@ -54,7 +53,7 @@ const Library = (props) => {
                 console.log("result Object ", resultObject);
                 console.log("result Object getBooks ", resultObject.getBooks);
                 console.log("result Object getBooks totalItems ", resultObject.getBooks.totalItems);
-                setSearchResponse("received ");
+                setSearchResponse("received");
                 setSearchResulTotalCount(resultObject.getBooks.totalItems);
             }).catch((error) => {
                 console.error('Error:', error);
